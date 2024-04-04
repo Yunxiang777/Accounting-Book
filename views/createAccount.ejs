@@ -1,0 +1,36 @@
+
+<div class="container">
+  <h3 style="text-align: center; margin-top: 30px;">記帳</h3>
+  <hr>
+  <form action="/account" method="POST" onsubmit="return validateForm()">
+      <div class="mb-3">
+          <label for="thing" class="form-label">事項</label>
+          <input type="text" class="form-control" name="thing" required>
+      </div>
+      <div class="mb-3">
+          <label for="date" class="form-label">時間</label>
+          <input type="date" class="form-control" name="date">
+      </div>
+      <div class="input-group mb-3">
+          <label class="input-group-text" for="type">類型</label>
+          <select class="form-select" name="type">
+            <option value="cost">支出</option>
+            <option value="income">收入</option>
+          </select>
+        </div>
+      <div class="mb-3">
+          <label for="amount" class="form-label">金額</label>
+          <input type="text" class="form-control" name="amount" required>
+      </div>
+      <div class="mb-3">
+          <div class="input-group">
+              <span class="input-group-text">備註</span>
+              <textarea class="form-control" name="note"></textarea>
+          </div>
+      </div>
+      <button type="submit" class="btn btn-outline-primary" style="width: 100%;">新增</button>
+      <%- include('common/homeButton', {btnName: '返回', url: '/account'}) %>
+  </form>
+</div>
+<script src="/javascripts/validateForm.js"></script>
+ 

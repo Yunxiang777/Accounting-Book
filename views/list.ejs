@@ -1,0 +1,29 @@
+<%- include('common/homeButton', {btnName: '前往記帳', url: '/account/create'}) %>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#id</th>
+        <th scope="col">主旨</th>
+        <th scope="col">日期</th>
+        <th scope="col">收支</th>
+        <th scope="col">金額</th>
+        <th scope="col">備註</th>
+        <th scope="col">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% accounts.forEach(function(account) { %>
+        <tr>
+          <th scope="row"><%= account.id %></th>
+          <td><%= account.thing %></td>
+          <td><%= account.date %></td>
+          <td><%= account.type %></td>
+          <td><%= account.amount %></td>
+          <td><%= account.note %></td>
+          <td><a href="/account/<%= account.id %>" class="btn btn-warning"  role="button">ｘ</a></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
